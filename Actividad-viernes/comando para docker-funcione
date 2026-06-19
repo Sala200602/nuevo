@@ -1,5 +1,5 @@
-Entrar a la carpeta donde esta el archivo docker-compose.yml
-Ingresamos en la terminal desde donde tenemos nuestro archivo
+#Entrar a la carpeta donde esta el archivo docker-compose.yml
+#1. Ingresamos en la terminal desde donde tenemos nuestro archivo
 docker version - Muestra la version del cliente y del servidor Docker.
 Con esto confirmo que Docker Desktop esta abierto y que la terminal puede comunicarse con Docker.
 docker compose version - Verifica que el subcomando Docker Compose esta disponible.
