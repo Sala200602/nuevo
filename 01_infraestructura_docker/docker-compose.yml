@@ -1,0 +1,34 @@
+name: actividad-viernes
+
+services:
+  # Escenario CP (MongoDB)
+  mongo1:
+    image: mongo:8.0
+    container_name: mongo1
+    command: mongod --replSet rs0 --bind_ip_all
+  mongo2:
+    image: mongo:8.0
+    container_name: mongo2
+    command: mongod --replSet rs0 --bind_ip_all
+  mongo3:
+    image: mongo:8.0
+    container_name: mongo3
+    command: mongod --replSet rs0 --bind_ip_all
+
+  # Escenario AP (Cassandra)
+  cassandra1:
+    image: cassandra:4.1
+    container_name: cassandra1
+    environment:
+      - CASSANDRA_CLUSTER_NAME=MyCluster
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=128M
+
+  cassandra2:
+    image: cassandra:4.1
+    container_name: cassandra2
+    environment:
+      - CASSANDRA_SEEDS=cassandra1
+      - CASSANDRA_CLUSTER_NAME=MyCluster
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=128M
